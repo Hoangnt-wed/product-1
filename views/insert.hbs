@@ -3,18 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Student</title>
+    <title>New Product</title>
 </head>
 <body>
     <form action="/doInsert" method="post">
         Name <input type="text" name="txtName" id="">
-        <label for="" style="color:aqua;">{{model.nameError}}</label>
+        <label for="" style="color:rgb(255, 0, 0);">{{model.nameError}}</label>
         <br>
         MSP <input type="text" name="txtMSP" id="">
+        <label for="" style="color:rgb(255, 0, 0);">{{model.mspError}}</label>
         <br>
         <br>
         SL <input type="text" name="txtSL">
         <br>
+        Gia <input type="text" name="txtGia">
         <input type="submit" value="Insert">
     </form>
 </body>

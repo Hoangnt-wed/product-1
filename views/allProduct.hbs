@@ -19,13 +19,16 @@
             <td>MSP</td>
             <td>Name</td>
             <td>So Luong</td>
+            <td>Gia</td>
         </tr>
         {{# each model}}
         <tr>
             <td>{{MSP}}</td>
             <td>{{name}}</td>
             <td>{{Sl}}</td>
-            <td><a href="/delete?id={{_id}}">delete</a></td>
+            <td>{{Gia}}</td>
+            <td><a href="/delete?id={{_id}}">delete</a></td>            
+            <td><a href="/update?id={{_id}}">Update</a></td>
         </tr>  
         {{/each}}
     </table>
