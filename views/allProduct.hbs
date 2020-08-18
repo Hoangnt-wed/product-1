@@ -1,25 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <title>All Products</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <h1>Day la san pham</h1>
-     <form action="/doSearch" method="post">
+
+<div class="jumbotron text-center">
+  <h1>Quản lý sản phẩm</h1>
+  <p>Bạn có thể thêm sửa xóa ở dưới đây!</p>
+    <form action="/doSearch" method="post">
         Name <input type="text" name="txtName" id="">
         <input type="submit" value="Search">
-    </form>
-    <br>
-    <a href="insert">New Product</a>
-    <hr>
-     <table width="50%" border="1">
+    </form> 
+</div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/">Trang chủ</a></li>
+        <li><a href="/allProduct">Sản phẩm</a></li>
+        <li><a href="/insert">Thêm sản phẩm mới</a></li>
+      </ul>
+        <center><table style="" width="50%" border="1">
         <tr>
             <td>MSP</td>
             <td>Name</td>
             <td>So Luong</td>
             <td>Gia</td>
+            <td>xóa</td>
+            <td>sửa</td>
         </tr>
         {{# each model}}
         <tr>
@@ -31,6 +43,7 @@
             <td><a href="/update?id={{_id}}">Update</a></td>
         </tr>  
         {{/each}}
-    </table>
+</table></center>
+        
 </body>
 </html>
