@@ -29,7 +29,7 @@ app.get('/allProduct', async (req, res) => {
     let results = await dbo.collection("products").find({}).toArray();
     res.render('allProduct', { model: results });
 })
-server = app.listen(5000, (err) => {
+server = app.listen(process.env.PORT ||5000, (err) => {
     if (err) { console.log(err) } else {
         console.log('thanh cong');
     }
@@ -50,9 +50,11 @@ app.post('/doInsert', async (req, res) => {
     let inputName = req.body.txtName;
     let inputMSP = req.body.txtMSP;
     let inputSL = req.body.txtSL;
-    let inputGia = req.body.txtGia;
+    let inputGia = req.body.txtGia;  
+    // NaN: Not a number
+    // isNaN(value); neu no la so tra false , true;
     let newProduct = { name: inputName, MSP: inputMSP, Sl: inputSL, Gia: inputGia };
-    if (inputName.trim().length == 0) {
+    if (inputName.length == 0) {
         let modelError = { nameError: "chua co ten!", mspError: "chua co ma san pham!" };
         res.render('insert', { model: modelError });
     }
